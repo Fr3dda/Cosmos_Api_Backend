@@ -9,12 +9,13 @@ namespace Cosmos_api.Contexts
         {
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductModel> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().ToContainer("Products").HasPartitionKey(x => x.PartitionKey);
+            modelBuilder.Entity<ProductModel>().ToContainer("Products").HasPartitionKey(x => x.PartitionKey);
         }
+
 
     }
 }
